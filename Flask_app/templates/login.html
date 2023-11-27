@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}ログインページ{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>ログイン画面</h1>
+    <form method="POST">
+        <label for="">ユーザー名</label>
+        <input type="text" name="username">
+        <label for="">パスワード</label>
+        <input type="password" name="password">
+        <input type="submit" value="ログイン">
+    </form>
+    <p>アカウントをお持ちでない方は、<a href="{{ url_for('signup') }}">こちら</a>からサインアップしてください。</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for category, message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
+</div>
+{% endblock %} 

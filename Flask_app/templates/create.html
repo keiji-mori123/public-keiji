@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>新規登録</h1>
+<form method="POST">
+    <div>
+        <label for="title">タイトル</label>
+        <input type="text" name="title" style="width: 467px;"> <!-- 幅を300pxに設定 -->
+    </div>
+    <div>
+        <label for="body">内容</label>
+        <textarea name="body" style="width: 500px; height: 200px;"></textarea> <!-- 幅を500px、高さを200pxに設定 -->
+    </div>
+    <input type="submit" value="新規登録">
+</form>
+{% endblock %} 
